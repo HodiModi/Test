@@ -11,7 +11,7 @@ package com.mycompany.testgit;
 
 import java.util.Scanner;
 
-public class TestGit {
+public class Main {
 
     public static void main(String[] args) {
 
