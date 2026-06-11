@@ -11,6 +11,8 @@ package com.mycompany.testgit;
 
 import java.util.Scanner;
 
+import java.util.Scanner;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -28,10 +30,8 @@ public class Main {
         System.out.print("Anzahl Kleinkinder (unter 6 Jahre): ");
         int kleinkinder = scanner.nextInt();
 
-        System.out.print("Parkplatz benötigt? (j/n): ");
-        char parken = scanner.next().toLowerCase().charAt(0);
-
-        boolean parkplatz = parken == 'j';
+        System.out.print("Anzahl benötigter Parkplätze: ");
+        int parkplaetze = scanner.nextInt();
 
         System.out.print("Ziegenfütterung buchen? (j/n): ");
         boolean ziegen = scanner.next().toLowerCase().charAt(0) == 'j';
@@ -43,33 +43,46 @@ public class Main {
                 erwachsene,
                 kinder,
                 kleinkinder,
-                parkplatz,
+                parkplaetze,
                 ziegen,
                 orca
         );
 
         Auftrag auftrag = new Auftrag();
 
+        int zahlendePersonen = erwachsene + kinder;
+
         System.out.println("\n===== RECHNUNG =====");
 
-        System.out.println("Erwachsene: " + erwachsene + " x 25€");
-        System.out.println("Kinder: " + kinder + " x 15€");
-        System.out.println("Kleinkinder: " + kleinkinder + " x 0€");
+        System.out.println("Erwachsene: " + erwachsene +
+                " x 25€ = " + (erwachsene * 25) + "€");
 
-        if (parkplatz)
-            System.out.println("Parkplatz: 5€");
+        System.out.println("Kinder: " + kinder +
+                " x 15€ = " + (kinder * 15) + "€");
 
-        if (ziegen)
-            System.out.println("Ziegenfütterung: 3€");
+        System.out.println("Kleinkinder: " + kleinkinder +
+                " x 0€ = 0€");
 
-        if (orca)
-            System.out.println("Orca-Show: 8€");
+        System.out.println("Parkplätze: " + parkplaetze +
+                " x 5€ = " + (parkplaetze * 5) + "€");
+
+        if (ziegen) {
+            System.out.println("Ziegenfütterung: " +
+                    zahlendePersonen + " x 3€ = " +
+                    (zahlendePersonen * 3) + "€");
+        }
+
+        if (orca) {
+            System.out.println("Orca-Show: " +
+                    zahlendePersonen + " x 8€ = " +
+                    (zahlendePersonen * 8) + "€");
+        }
 
         System.out.println("---------------------");
-        System.out.println("Gesamtpreis: " + ticket.berechnePreis() + "€");
-        System.out.println();
+        System.out.println("Gesamtpreis: " +
+                ticket.berechnePreis() + "€");
 
-        System.out.println("Auftragsnummer:");
+        System.out.println("\nAuftragsnummer:");
         System.out.println(auftrag.getAuftragsnummer());
 
         System.out.println("\nBarcode:");
