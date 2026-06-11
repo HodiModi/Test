@@ -9,7 +9,7 @@ package com.mycompany.testgit;
  * @author 14257112
  */
 
-public class Ticket {
+public class Tickets {
 
     private int erwachsene;
     private int kinder;
@@ -25,7 +25,7 @@ public class Ticket {
     private final int PREIS_ZIEGE = 3;
     private final int PREIS_ORCA = 8;
 
-    public Ticket(int erwachsene,
+    public Tickets(int erwachsene,
                   int kinder,
                   int kleinkinder,
                   boolean parkplatz,

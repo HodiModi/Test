@@ -39,7 +39,7 @@ public class Main {
         System.out.print("Orca-Show buchen? (j/n): ");
         boolean orca = scanner.next().toLowerCase().charAt(0) == 'j';
 
-        Ticket ticket = new Ticket(
+        Tickets ticket = new Tickets(
                 erwachsene,
                 kinder,
                 kleinkinder,
