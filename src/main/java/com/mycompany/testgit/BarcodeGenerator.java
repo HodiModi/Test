@@ -1,3 +1,14 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ */
+
+package com.mycompany.testgit;
+
+/**
+ *
+ * @author 14257112
+ */
+
 public class BarcodeGenerator {
 
     public static String erzeugeBarcode(String text) {
